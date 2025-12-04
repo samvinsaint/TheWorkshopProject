@@ -1,0 +1,58 @@
+-- ============================================
+-- Test Data สำหรับทดสอบระบบ
+-- ไฟล์นี้จะรันอัตโนมัติตอน Spring Boot start
+-- ============================================
+
+-- สร้าง Users ทดสอบ (รหัสผ่านทั้งหมดคือ "password123" แต่ต้อง hash ก่อน)
+-- รหัสผ่านที่ hash แล้วด้วย BCrypt: $2a$10$eU7VVJr0dYZ5G3H.K6V3.eHGj4BvXGH3qFZjJr.4XKj8ZvH4gKJ8W
+INSERT INTO users (username, password, email, enabled, created_at, updated_at)
+VALUES
+    ('john_doe', '$2a$10$eU7VVJr0dYZ5G3H.K6V3.eHGj4BvXGH3qFZjJr.4XKj8ZvH4gKJ8W', 'john@example.com', true, NOW(), NOW()),
+    ('jane_smith', '$2a$10$eU7VVJr0dYZ5G3H.K6V3.eHGj4BvXGH3qFZjJr.4XKj8ZvH4gKJ8W', 'jane@example.com', true, NOW(), NOW()),
+    ('bob_wilson', '$2a$10$eU7VVJr0dYZ5G3H.K6V3.eHGj4BvXGH3qFZjJr.4XKj8ZvH4gKJ8W', 'bob@example.com', true, NOW(), NOW())
+ON CONFLICT DO NOTHING;
+
+-- สร้าง Workshops ทดสอบ
+INSERT INTO workshops (title, description, total_seats, price, active, scheduled_at, created_at, updated_at)
+VALUES
+    (
+        'Spring Boot Masterclass',
+        'Learn Spring Boot framework from beginner to advanced level. Build real-world applications with microservices architecture.',
+        50,
+        1500.00,
+        true,
+        '2024-12-25 10:00:00',
+        NOW(),
+        NOW()
+    ),
+    (
+        'React & TypeScript Workshop',
+        'Modern frontend development with React 18, TypeScript, and best practices. Build scalable UI applications.',
+        30,
+        1200.00,
+        true,
+        '2024-12-26 14:00:00',
+        NOW(),
+        NOW()
+    ),
+    (
+        'Docker & Kubernetes',
+        'Master container orchestration and deployment strategies. Learn DevOps best practices.',
+        20,
+        1800.00,
+        true,
+        '2024-12-27 09:00:00',
+        NOW(),
+        NOW()
+    ),
+    (
+        'High Concurrency Systems',
+        'Design and build systems that handle millions of requests. Learn Redis, queues, and distributed systems.',
+        10,
+        2500.00,
+        true,
+        '2024-12-28 13:00:00',
+        NOW(),
+        NOW()
+    )
+ON CONFLICT DO NOTHING;

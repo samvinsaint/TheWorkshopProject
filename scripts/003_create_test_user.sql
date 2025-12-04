@@ -1,0 +1,44 @@
+-- Create a test user for development
+-- Email: test@workshop.com
+-- Password: test123456
+
+-- Note: This is a placeholder. In Supabase, users are created through the auth system.
+-- You need to manually create this user in Supabase Dashboard:
+-- 1. Go to Authentication > Users
+-- 2. Click "Add User"
+-- 3. Email: test@workshop.com
+-- 4. Password: test123456
+-- 5. Confirm email automatically
+
+-- Or run this in SQL Editor if you have admin access:
+-- INSERT INTO auth.users (
+--   instance_id,
+--   id,
+--   aud,
+--   role,
+--   email,
+--   encrypted_password,
+--   email_confirmed_at,
+--   created_at,
+--   updated_at,
+--   confirmation_token,
+--   email_change,
+--   email_change_token_new,
+--   recovery_token
+-- ) VALUES (
+--   '00000000-0000-0000-0000-000000000000',
+--   gen_random_uuid(),
+--   'authenticated',
+--   'authenticated',
+--   'test@workshop.com',
+--   crypt('test123456', gen_salt('bf')),
+--   NOW(),
+--   NOW(),
+--   NOW(),
+--   '',
+--   '',
+--   '',
+--   ''
+-- );
+
+SELECT 'Please create test user manually in Supabase Dashboard' as note;
