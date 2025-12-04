@@ -125,12 +125,6 @@ The system is optimized for Vercel's edge runtime.
 - Zero race conditions
 - Zero overselling incidents
 
-## Testing
-
-Test Account:
-- Email: `test@workshop.com`
-- Password: `test123456`
-
 ## License
 
 MIT License
