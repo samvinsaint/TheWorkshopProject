@@ -1,4 +1,5 @@
 # The Workshop - High-Concurrency Registration System
+Open [https://the-workshop-project.vercel.app/)
 
 A production-ready workshop registration system built to handle 500+ concurrent users with zero overselling guarantee.
 
